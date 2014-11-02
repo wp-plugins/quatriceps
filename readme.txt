@@ -32,31 +32,31 @@ A Tetragy ID is necessary and may be obtained from https://tetragy.com/. Account
 
 == Frequently Asked Questions ==
 
-- How much does it cost ?
+= How much does it cost ? =
 
 $0.00105 per request.
 
-- Can I try out the service ?
+= Can I try out the service ? =
 
 Yes, 250 points are granted with signup, and another 250 points are granted the first of every month. This should be enough for users to take advantage of a particular service without any purchase.
 
-- How does the point system work ?
+= How does the point system work ? =
 
 Tetragy offers four distinct web services and uses a point system to create a digital currency between services. Points may be used for Caascade computation requests, Quatriceps learning problems, Quadstat statistical operations, or QuatraTeX document compiling.
 
-- Do I need to install anything else on my server ?
+= Do I need to install anything else on my server ? =
 
 No, Wordpress and the Quatriceps plugin are the only software requirements. Configuring your Tetragy account with a dedicated IP address is recommended to prevent unauthorized use of your Tetragy ID.
 
-- How do I prevent spam submissions ?
+= How do I prevent spam submissions ? =
 
 With reCaptcha you can help prevent spam and other abuse of your Tetragy account. Configure the public and private key settings to automatically add a reCaptcha form to all your widgets. This plugin also includes support for choosing a reCaptcha themes.
 
-- Why is it recommended to whitelist my IP address ?
+= Why is it recommended to whitelist my IP address ? =
 
 To prevent unauthorized use of your Tetragy account. If IP enforcing is disabled, all requests made with your numeric ID will be deducted from your account. By default, enforcing is enabled. Login and go to math settings to disable.
 
-- Where can I try a demo ?
+= Where can I try a demo ? =
 
 http://wp.tetragy.com/quatriceps/
 
