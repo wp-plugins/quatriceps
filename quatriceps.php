@@ -3,7 +3,7 @@
  * Plugin Name: Quatriceps
  * Plugin URI: http://wp.tetragy.com/quatriceps
  * Description: Mathematics problem generator
- * Version: 0.1.0
+ * Version: 0.1.1
  * Author: pmagunia
  * Author URI: https://tetragy.com
  * License: GPLv2 or Later
@@ -202,10 +202,10 @@ add_shortcode( 'quatriceps', 'quatriceps_func' );
 add_action( 'init', 'quatriceps_script_enqueuer' );
 
 function quatriceps_script_enqueuer() {
-  wp_register_script("recaptcha_script", "http://www.google.com/recaptcha/api/js/recaptcha_ajax.js", array(), '0.1.0', false);
-  wp_register_script("mathjax_script", "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML", array(), '0.1.0', false);
-  wp_register_script("quatriceps_script", WP_PLUGIN_URL . '/quatriceps/quatriceps.js', array('jquery', 'mathjax_script'), '0.1.0', true);
-  wp_register_style("quatriceps_css", WP_PLUGIN_URL . '/quatriceps/quatriceps.css', array(), '0.1.0', 'all');
+  wp_register_script("recaptcha_script", "http://www.google.com/recaptcha/api/js/recaptcha_ajax.js", array(), '0.1.1', false);
+  wp_register_script("mathjax_script", "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML", array(), '0.1.1', false);
+  wp_register_script("quatriceps_script", WP_PLUGIN_URL . '/quatriceps/quatriceps.js', array('jquery', 'mathjax_script'), '0.1.1', true);
+  wp_register_style("quatriceps_css", WP_PLUGIN_URL . '/quatriceps/quatriceps.css', array(), '0.1.1', 'all');
   wp_localize_script('quatriceps_script', 'quatricepsAjax', array('ajaxurl' => admin_url('admin-ajax.php'), 'quatriceps_recaptcha_pubkey' => get_option('quatriceps_recaptcha_publickey', ''), 'recaptcha_theme' => get_option('quatriceps_recaptcha_theme', 'red'), 'quatriceps_id' => get_option('quatriceps_id', '')));        
 
   wp_enqueue_script('recaptcha_script');
