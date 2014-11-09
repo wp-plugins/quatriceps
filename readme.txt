@@ -75,6 +75,14 @@ xlop LaTeX package copyrighted by Jean-Come Charpentier
 
 == Screenshots ==
 
+1. Addition operation
+2. Subtraction operation
+3. Multiplication operation
+4. Division operation
+5. PDF output
+6. Quatriceps UI
+7. Quatriceps Shortcode syntax for including operation on a page or post
+
 == Changelog ==
 
 = 0.1.0 =
@@ -85,3 +93,5 @@ xlop LaTeX package copyrighted by Jean-Come Charpentier
 
 == Upgrade Notice ==
 
+= 0.1.1 =
+No bug fixes, No new features, minor cosmetic changes
