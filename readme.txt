@@ -50,7 +50,7 @@ No, Wordpress and the Quatriceps plugin are the only software requirements. Conf
 
 = How do I prevent spam submissions ? =
 
-With reCaptcha you can help prevent spam and other abuse of your Tetragy account. Configure the public and private key settings to automatically add a reCaptcha form to all your widgets. This plugin also includes support for choosing a reCaptcha theme.
+With Recaptcha you can help prevent spam and other abuse of your Tetragy account. Configure the public and private key settings to automatically add a Recaptcha form to all your widgets. This plugin also includes support for choosing a Recaptcha theme.
 
 = Why is it recommended to whitelist my IP address ? =
 

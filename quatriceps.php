@@ -72,12 +72,12 @@ function quatriceps_plugin_admin_init()
   register_setting( 'quatriceps_plugin_settings', 'quatriceps_recaptcha_privatekey', 'quatriceps_recaptcha_privatekey_validate');
   register_setting( 'quatriceps_plugin_settings', 'quatriceps_recaptcha_theme', 'quatriceps_recaptcha_theme_validate');
   add_settings_section('quatriceps_options', 'Quatriceps', 'quatriceps_section_text', 'quatriceps');
-  add_settings_section('quatriceps_recaptcha_options', 'reCaptcha', 'quatriceps_recaptcha_text', 'quatriceps');
+  add_settings_section('quatriceps_recaptcha_options', 'Recaptcha', 'quatriceps_recaptcha_text', 'quatriceps');
   add_settings_field('quatriceps_id', 'Tetragy Numeric ID', 'quatriceps_setting_string', 'quatriceps', 'quatriceps_options');
   add_settings_field('quatriceps_router', 'Quatriceps Router', 'quatriceps_setting_router', 'quatriceps', 'quatriceps_options');
-  add_settings_field('quatriceps_recaptcha_publickey', 'reCaptcha Public Key', 'quatriceps_setting_recaptcha_publickey', 'quatriceps', 'quatriceps_recaptcha_options');
-  add_settings_field('quatriceps_recaptcha_privatekey', 'reCaptcha Private Key', 'quatriceps_setting_recaptcha_privatekey', 'quatriceps', 'quatriceps_recaptcha_options');
-  add_settings_field('quatriceps_recaptcha_theme', 'reCaptcha Theme', 'quatriceps_setting_recaptcha_theme', 'quatriceps', 'quatriceps_recaptcha_options');
+  add_settings_field('quatriceps_recaptcha_publickey', 'Recaptcha Public Key', 'quatriceps_setting_recaptcha_publickey', 'quatriceps', 'quatriceps_recaptcha_options');
+  add_settings_field('quatriceps_recaptcha_privatekey', 'Recaptcha Private Key', 'quatriceps_setting_recaptcha_privatekey', 'quatriceps', 'quatriceps_recaptcha_options');
+  add_settings_field('quatriceps_recaptcha_theme', 'Recaptcha Theme', 'quatriceps_setting_recaptcha_theme', 'quatriceps', 'quatriceps_recaptcha_options');
 }
 
 function quatriceps_section_text()
@@ -87,7 +87,7 @@ function quatriceps_section_text()
 
 function quatriceps_recaptcha_text()
 {
-  echo '<p>reCaptch is a Google service to help prevent spam submissions and abuse. Entering a public and private key will activite reCaptcha for all Wordpress Quatriceps widgets.<strong>If you decide to use the Recaptcha service, be sure to enter a correct public and private key otherwise, you may get confusing results.</strong> Be sure the keys you enter are for your particular domain that is registered at Google.</p>';
+  echo '<p>Recaptcha is a Google service to help prevent spam submissions and abuse. Entering a public and private key will activite Recaptcha for all Wordpress Quatriceps widgets.<strong>If you decide to use the Recaptcha service, be sure to enter a correct public and private key otherwise, you may get confusing results.</strong> Be sure the keys you enter are for your particular domain that is registered at Google.</p>';
 }
 
 function quatriceps_setting_string()
@@ -190,7 +190,7 @@ function quatriceps_func( $atts ) {
   if(strlen($publickey))
   {
     require_once 'recaptchalib.php';
-    # support multiple reCaptcha
+    # support multiple Recaptcha
     $recap = '<div class="quatriceps-recaptcha" id="quatriceps-recaptcha-' . rand(10000,99999) . '"></div>';
   }
   $markup = '<div class="quatriceps-cp">' . $markup . '</div>';
@@ -229,7 +229,7 @@ function prefix_ajax_quatriceps_compute() {
     $resp = recaptcha_check_answer($privatekey, $_SERVER["REMOTE_ADDR"], $_REQUEST["recaptcha_challenge_field"], $_REQUEST["recaptcha_response_field"]);
     if(!$resp->is_valid)
     {
-      echo $_REQUEST['callback'] . '({"input":"","output":"The reCAPTCHA wasn\'t entered correctly. Go back and try it again.","pdf":""})';
+      echo $_REQUEST['callback'] . '({"input":"","output":"The Recaptcha wasn\'t entered correctly. Go back and try it again.","pdf":""})';
       die();
     }
   }
