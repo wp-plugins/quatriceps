@@ -189,7 +189,10 @@ function quatriceps_func( $atts ) {
   $recap = '';
   if(strlen($publickey))
   {
-    require_once 'recaptchalib.php';
+    if(!class_exists('ReCaptchaResponse'))
+    {
+      require_once 'recaptchalib.php';
+    }
     # support multiple Recaptcha
     $recap = '<div class="quatriceps-recaptcha" id="quatriceps-recaptcha-' . rand(10000,99999) . '"></div>';
   }
