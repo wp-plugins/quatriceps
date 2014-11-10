@@ -87,7 +87,7 @@ function quatriceps_section_text()
 
 function quatriceps_recaptcha_text()
 {
-  echo '<p>reCaptch is a Google service to help prevent spam submissions and abuse. Entering a public and private key will activite reCaptcha for all Wordpress Quatriceps widgets.</p>';
+  echo '<p>reCaptch is a Google service to help prevent spam submissions and abuse. Entering a public and private key will activite reCaptcha for all Wordpress Quatriceps widgets.<strong>If you decide to use the Recaptcha service, be sure to enter a correct public and private key otherwise, you may get confusing results.</strong> Be sure the keys you enter are for your particular domain that is registered at Google.</p>';
 }
 
 function quatriceps_setting_string()
