@@ -10,9 +10,9 @@ Mathematics problem/solution generator
 
 == Description ==
 
-Quatriceps is a mathematics API for generating basic problems and their solution. The Quatriceps Wordpress plugin allows easy setup of Quatriceps blocks on a Wordpress blog for student use.
+Quatriceps is a mathematics API for generating basic problems and their solution. This Wordpress plugin allows easy setup of Quatricep blocks on a Wordpress blog for student use.
 
-Custom problems may be requested or they may be auto-generated. When the student requests the solution, a LaTeX image file is compiled and retrieved from a Tetragy server. Currently, only the four basic arithmetic binary operations are supported. Tetragy welcomes requests for new operations that may be specific to a user or organization. The current version of the plugin provides for the following operations:
+Custom problems may be requested or they may be auto-generated. When the student requests the solution, a LaTeX image file is compiled and retrieved from a Tetragy server. Currently, only the four basic arithmetic binary operations are supported. Tetragy welcomes requests for new operations that may be specific to a user or organization. The current version of the plugin provides for the following operations with help of the xlop LaTeX package.
 
 - addition
 - subtraction
@@ -23,7 +23,7 @@ Addition is displayed with carries. Displaying carries with subtraction is optio
 
 == Installation ==
 
-A Tetragy ID is necessary and may be obtained from https://tetragy.com/. Accounts are necessary to allocate resources and prevent abuse of user and network services. Links to the Tetragy Limited privacy policy and terms of service may be found at the bottom of tetragy.com and all subdomains.
+A Tetragy ID is necessary and may be obtained from https://tetragy.com/. Accounts are necessary to allocate resources and prevent abuse of user and network services. Links to the Tetragy Limited privacy policy and terms of service may be found at the bottom of all .tetragy.com pages.
 
 1. Download and unzip the Wordpress Quatriceps zip file to your `/wp-content/plugins/` directory.
 2. Whitelist your server IP addresses or disable enforcing at https://math.tetragy.com/user.
