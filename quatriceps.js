@@ -21,6 +21,11 @@ jQuery(document).ready( function($)
   $('.quatriceps-reveal').click(function()
   {
     qid = '#' + $(this).parent('div').parent('div').attr('id')
+    if($(qid + ' .quatriceps-arg0').val() == '')
+    {
+     alert('Please enter all required input.')
+     return false;
+    }
     if(pubkey.length)
     {
       if($('#recaptcha_challenge_image').length == 0)
@@ -28,6 +33,7 @@ jQuery(document).ready( function($)
         recap_theme = quatricepsAjax.recaptcha_theme
         var recap_div = $(qid + ' .quatriceps-recaptcha').attr('id')
         Recaptcha.create(pubkey, recap_div, { theme: recap_theme })
+        $(qid + ' .quatriceps-reveal').val('Submit Recaptcha')
         return false;
       }
 

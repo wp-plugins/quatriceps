@@ -10,9 +10,9 @@ Mathematics problem/solution generator
 
 == Description ==
 
-Quatriceps is a mathematics API for generating basic problems and their solution. The Quatriceps Wordpress plugin allows easy setup of Quatriceps blocks on a Wordpress blog.
+Quatriceps is a mathematics API for generating basic problems and their solution. This Wordpress plugin allows easy setup of Quatricep blocks on a Wordpress blog for student use.
 
-Custom problems may be requested by the student or they may be auto-generated. When the student requests the solution, a LaTeX image file is compiled and retrieved from a Tetragy server. Currently, only the four basic arithmetic binary operations are supported. Tetragy welcomes requests for new operations that may be specific to a user or organization. The current version of the plugin provides for the following operations:
+Custom problems may be requested or they may be auto-generated. When the student requests the solution, a LaTeX image file is compiled and retrieved from a Tetragy server. Currently, only the four basic arithmetic binary operations are supported. Tetragy welcomes requests for new operations that may be specific to a user or organization. The current version of the plugin provides for the following operations with help of the xlop LaTeX package.
 
 - addition
 - subtraction
@@ -23,12 +23,12 @@ Addition is displayed with carries. Displaying carries with subtraction is optio
 
 == Installation ==
 
-A Tetragy ID is necessary and may be obtained from https://tetragy.com/. Accounts are necessary to allocate resources and prevent abuse of user and network services. Links to the Tetragy Limited privacy policy and terms of service may be found at the bottom of tetragy.com and all subdomains.
+A Tetragy ID is necessary and may be obtained from https://tetragy.com/. Accounts are necessary to allocate resources and prevent abuse of user and network services. Links to the Tetragy Limited privacy policy and terms of service may be found at the bottom of all .tetragy.com pages.
 
 1. Download and unzip the Wordpress Quatriceps zip file to your `/wp-content/plugins/` directory.
-2. Whitelist your server IP addresses or disable enforcing at `math.tetragy.com/user`.
+2. Whitelist your server IP addresses or disable enforcing at https://math.tetragy.com/user.
 3. Visit the Quatriceps settings page of your Wordpress site to configure your ID.
-4. Use Shortcode in your posts to include a Quatriceps operation. For example: `[quatriceps com="addition"]`.
+4. Use Shortcode in your posts to include a Quatriceps operation. For example: `[quatriceps com="addition"]`. For additional information about Shortcode visit http://codex.wordpress.org/Shortcode.
 
 == Frequently Asked Questions ==
 
@@ -50,7 +50,7 @@ No, Wordpress and the Quatriceps plugin are the only software requirements. Conf
 
 = How do I prevent spam submissions ? =
 
-With reCaptcha you can help prevent spam and other abuse of your Tetragy account. Configure the public and private key settings to automatically add a reCaptcha form to all your widgets. This plugin also includes support for choosing a reCaptcha themes.
+With Recaptcha you can help prevent spam and other abuse of your Tetragy account. Configure the public and private key settings to automatically add a Recaptcha form to all your widgets. This plugin also includes support for choosing a Recaptcha theme.
 
 = Why is it recommended to whitelist my IP address ? =
 
@@ -63,12 +63,15 @@ http://wp.tetragy.com/quatriceps/
 
 References
 
-- http://maxima.sourceforge.net
 - http://www.latex-project.org
 - http://www.ctan.org/pkg/xlop
 - http://www.google.com/recaptcha
 - https://math.tetragy.com
 - http://wp.tetragy.com/quatriceps/
+
+Attribution
+
+xlop LaTeX package copyrighted by Jean-Come Charpentier
 
 == Screenshots ==
 
@@ -77,12 +80,18 @@ References
 3. Multiplication operation
 4. Division operation
 5. PDF output
+6. Quatriceps UI
+7. Quatriceps Shortcode syntax for including operation on a page or post
 
 == Changelog ==
 
-= 0.1 =
+= 0.1.0 =
 * Initial commit
 
+= 0.1.1 =
+* Cosmetics
 
 == Upgrade Notice ==
 
+= 0.1.1 =
+No bug fixes, No new features, minor cosmetic changes

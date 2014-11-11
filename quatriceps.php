@@ -3,7 +3,7 @@
  * Plugin Name: Quatriceps
  * Plugin URI: http://wp.tetragy.com/quatriceps
  * Description: Mathematics problem generator
- * Version: 0.1.0
+ * Version: 0.1.1
  * Author: pmagunia
  * Author URI: https://tetragy.com
  * License: GPLv2 or Later
@@ -72,12 +72,12 @@ function quatriceps_plugin_admin_init()
   register_setting( 'quatriceps_plugin_settings', 'quatriceps_recaptcha_privatekey', 'quatriceps_recaptcha_privatekey_validate');
   register_setting( 'quatriceps_plugin_settings', 'quatriceps_recaptcha_theme', 'quatriceps_recaptcha_theme_validate');
   add_settings_section('quatriceps_options', 'Quatriceps', 'quatriceps_section_text', 'quatriceps');
-  add_settings_section('quatriceps_recaptcha_options', 'reCaptcha', 'quatriceps_recaptcha_text', 'quatriceps');
+  add_settings_section('quatriceps_recaptcha_options', 'Recaptcha', 'quatriceps_recaptcha_text', 'quatriceps');
   add_settings_field('quatriceps_id', 'Tetragy Numeric ID', 'quatriceps_setting_string', 'quatriceps', 'quatriceps_options');
   add_settings_field('quatriceps_router', 'Quatriceps Router', 'quatriceps_setting_router', 'quatriceps', 'quatriceps_options');
-  add_settings_field('quatriceps_recaptcha_publickey', 'reCaptcha Public Key', 'quatriceps_setting_recaptcha_publickey', 'quatriceps', 'quatriceps_recaptcha_options');
-  add_settings_field('quatriceps_recaptcha_privatekey', 'reCaptcha Private Key', 'quatriceps_setting_recaptcha_privatekey', 'quatriceps', 'quatriceps_recaptcha_options');
-  add_settings_field('quatriceps_recaptcha_theme', 'reCaptcha Theme', 'quatriceps_setting_recaptcha_theme', 'quatriceps', 'quatriceps_recaptcha_options');
+  add_settings_field('quatriceps_recaptcha_publickey', 'Recaptcha Public Key', 'quatriceps_setting_recaptcha_publickey', 'quatriceps', 'quatriceps_recaptcha_options');
+  add_settings_field('quatriceps_recaptcha_privatekey', 'Recaptcha Private Key', 'quatriceps_setting_recaptcha_privatekey', 'quatriceps', 'quatriceps_recaptcha_options');
+  add_settings_field('quatriceps_recaptcha_theme', 'Recaptcha Theme', 'quatriceps_setting_recaptcha_theme', 'quatriceps', 'quatriceps_recaptcha_options');
 }
 
 function quatriceps_section_text()
@@ -87,7 +87,7 @@ function quatriceps_section_text()
 
 function quatriceps_recaptcha_text()
 {
-  echo '<p>reCaptch is a Google service to help prevent spam submissions and abuse. Entering a public and private key will activite reCaptcha for all Wordpress Quatriceps widgets.</p>';
+  echo '<p>Recaptcha is a Google service to help prevent spam submissions and abuse. Entering a public and private key will activite Recaptcha for all Quatriceps widgets. <strong>If you decide to use the Recaptcha service, be sure to enter the correct public and private key otherwise you may get confusing results.</strong> Also, be sure the keys you enter are for your particular domain that is registered at Google.</p>';
 }
 
 function quatriceps_setting_string()
@@ -189,8 +189,11 @@ function quatriceps_func( $atts ) {
   $recap = '';
   if(strlen($publickey))
   {
-    require_once 'recaptchalib.php';
-    # support multiple reCaptcha
+    if(!class_exists('ReCaptchaResponse'))
+    {
+      require_once 'recaptchalib.php';
+    }
+    # support multiple Recaptcha
     $recap = '<div class="quatriceps-recaptcha" id="quatriceps-recaptcha-' . rand(10000,99999) . '"></div>';
   }
   $markup = '<div class="quatriceps-cp">' . $markup . '</div>';
@@ -202,10 +205,10 @@ add_shortcode( 'quatriceps', 'quatriceps_func' );
 add_action( 'init', 'quatriceps_script_enqueuer' );
 
 function quatriceps_script_enqueuer() {
-  wp_register_script("recaptcha_script", "http://www.google.com/recaptcha/api/js/recaptcha_ajax.js", array(), '0.1.0', false);
-  wp_register_script("mathjax_script", "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML", array(), '0.1.0', false);
-  wp_register_script("quatriceps_script", WP_PLUGIN_URL . '/quatriceps/quatriceps.js', array('jquery', 'mathjax_script'), '0.1.0', true);
-  wp_register_style("quatriceps_css", WP_PLUGIN_URL . '/quatriceps/quatriceps.css', array(), '0.1.0', 'all');
+  wp_register_script("recaptcha_script", "http://www.google.com/recaptcha/api/js/recaptcha_ajax.js", array(), '0.1.1', false);
+  wp_register_script("mathjax_script", "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML", array(), '0.1.1', false);
+  wp_register_script("quatriceps_script", WP_PLUGIN_URL . '/quatriceps/quatriceps.js', array('jquery', 'mathjax_script'), '0.1.1', true);
+  wp_register_style("quatriceps_css", WP_PLUGIN_URL . '/quatriceps/quatriceps.css', array(), '0.1.1', 'all');
   wp_localize_script('quatriceps_script', 'quatricepsAjax', array('ajaxurl' => admin_url('admin-ajax.php'), 'quatriceps_recaptcha_pubkey' => get_option('quatriceps_recaptcha_publickey', ''), 'recaptcha_theme' => get_option('quatriceps_recaptcha_theme', 'red'), 'quatriceps_id' => get_option('quatriceps_id', '')));        
 
   wp_enqueue_script('recaptcha_script');
@@ -229,7 +232,7 @@ function prefix_ajax_quatriceps_compute() {
     $resp = recaptcha_check_answer($privatekey, $_SERVER["REMOTE_ADDR"], $_REQUEST["recaptcha_challenge_field"], $_REQUEST["recaptcha_response_field"]);
     if(!$resp->is_valid)
     {
-      echo '{"input":"","output":"The reCAPTCHA wasn\'t entered correctly. Go back and try it again.","pdf":""}';
+      echo $_REQUEST['callback'] . '({"input":"","output":"The Recaptcha wasn\'t entered correctly. Go back and try it again.","pdf":""})';
       die();
     }
   }
