@@ -84,7 +84,7 @@ xlop LaTeX package copyrighted by Jean-Come Charpentier
 
 == Changelog ==
 
-= 0.2.0 =
+= 1.0.0 =
 * Override packaged CSS and JS files
 
 = 0.1.1 =
@@ -95,7 +95,7 @@ xlop LaTeX package copyrighted by Jean-Come Charpentier
 
 == Upgrade Notice ==
 
-= 0.2.0 =
+= 1.0.0 =
 Allows overriding CSS and JS files. No bug fixes or cosmetic changes.
 
 = 0.1.1 =
