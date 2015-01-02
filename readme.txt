@@ -2,7 +2,7 @@
 Contributors: pmagunia
 Tags: math,education,shortcode,arithmetic,learning
 Requires at least: 3.9.2
-Tested up to: 4.0
+Tested up to: 4.1
 License: GPLv2  or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,7 +38,7 @@ $0.00105 per request.
 
 = Can I try out the service ? =
 
-Yes, 250 points are granted with signup, and another 250 points are granted the first of every month. This should be enough for users to take advantage of a particular service without any purchase.
+Yes, 250 points are granted with signup, and another 250 points are granted the first of every month.
 
 = How does the point system work ? =
 
@@ -58,7 +58,7 @@ To prevent unauthorized use of your Tetragy account. If IP enforcing is disabled
 
 = Where can I try a demo ? =
 
-http://wp.tetragy.com/quatriceps/
+http://wp.tetragy.com/quatriceps
 
 
 References
@@ -67,7 +67,6 @@ References
 - http://www.ctan.org/pkg/xlop
 - http://www.google.com/recaptcha
 - https://math.tetragy.com
-- http://wp.tetragy.com/quatriceps/
 
 Attribution
 
@@ -85,13 +84,19 @@ xlop LaTeX package copyrighted by Jean-Come Charpentier
 
 == Changelog ==
 
-= 0.1.0 =
-* Initial commit
+= 1.0.0 =
+* Override packaged CSS and JS files
 
 = 0.1.1 =
 * Cosmetics
 
+= 0.1.0 =
+* Initial commit
+
 == Upgrade Notice ==
+
+= 1.0.0 =
+Allows overriding CSS and JS files. No bug fixes or cosmetic changes.
 
 = 0.1.1 =
 No bug fixes, No new features, minor cosmetic changes
