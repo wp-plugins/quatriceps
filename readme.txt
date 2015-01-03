@@ -18,6 +18,7 @@ Custom problems may be requested or they may be auto-generated. When the student
 - subtraction
 - multiplication
 - divivion
+- least common multiple
 
 Addition is displayed with carries. Displaying carries with subtraction is optional. Multiplication and division are displayed 'longhand'.
 
@@ -84,6 +85,10 @@ xlop LaTeX package copyrighted by Jean-Come Charpentier
 
 == Changelog ==
 
+= 1.1.0 =
+New operations: lcm
+Bug fixes:
+
 = 1.0.0 =
 * Override packaged CSS and JS files
 
@@ -94,6 +99,9 @@ xlop LaTeX package copyrighted by Jean-Come Charpentier
 * Initial commit
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+New operations
 
 = 1.0.0 =
 Allows overriding CSS and JS files. No bug fixes or cosmetic changes.
