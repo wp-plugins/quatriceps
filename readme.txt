@@ -10,21 +10,15 @@ Mathematics problem/solution generator
 
 == Description ==
 
-Quatriceps is a mathematics API for generating basic problems and their solution. This Wordpress plugin allows easy setup of Quatricep blocks on a Wordpress blog for student use.
+Quatriceps is a mathematics API for generating solutions to basic arithmetic problems. This plugin allows easy setup of Quatricep blocks on a Wordpress blog for student use.
 
-Custom problems may be requested or they may be auto-generated. When the student requests the solution, a LaTeX image file is compiled and retrieved from a Tetragy server. Currently, only the four basic arithmetic binary operations are supported. Tetragy welcomes requests for new operations that may be specific to a user or organization. The current version of the plugin provides for the following operations with help of the xlop LaTeX package.
-
-- addition
-- subtraction
-- multiplication
-- divivion
-- least common multiple
+When a student requests a solution, a LaTeX image file is compiled with the `xlop` package and retrieved from a Tetragy server. Currently, only the four basic binary operations are supported. Tetragy welcomes requests for new operations that may be specific to an organization.
 
 Addition is displayed with carries. Displaying carries with subtraction is optional. Multiplication and division are displayed 'longhand'.
 
 == Installation ==
 
-A Tetragy ID is necessary and may be obtained from https://tetragy.com/. Accounts are necessary to allocate resources and prevent abuse of user and network services. Links to the Tetragy Limited privacy policy and terms of service may be found at the bottom of all .tetragy.com pages.
+A Tetragy ID is necessary and may be obtained from https://tetragy.com/. Accounts are necessary to allocate resources and prevent abuse of user and network services.
 
 1. Download and unzip the Wordpress Quatriceps zip file to your `/wp-content/plugins/` directory.
 2. Whitelist your server IP addresses or disable enforcing at https://math.tetragy.com/user.
@@ -33,29 +27,21 @@ A Tetragy ID is necessary and may be obtained from https://tetragy.com/. Account
 
 == Frequently Asked Questions ==
 
-= How much does it cost ? =
-
-$0.00105 per request.
-
 = Can I try out the service ? =
 
-Yes, 250 points are granted with signup, and another 250 points are granted the first of every month.
-
-= How does the point system work ? =
-
-Tetragy offers four distinct web services and uses a point system to create a digital currency between services. Points may be used for Caascade computation requests, Quatriceps learning problems, Quadstat statistical operations, or QuatraTeX document compiling.
+Yes, users are alloted free points every month and may purchase additional points if necessary.
 
 = Do I need to install anything else on my server ? =
 
-No, Wordpress and the Quatriceps plugin are the only software requirements. Configuring your Tetragy account with a dedicated IP address is recommended to prevent unauthorized use of your Tetragy ID.
+No, Wordpress and the Quatriceps plugin are the only software requirements.
 
 = How do I prevent spam submissions ? =
 
-With Recaptcha you can help prevent spam and other abuse of your Tetragy account. Configure the public and private key settings to automatically add a Recaptcha form to all your widgets. This plugin also includes support for choosing a Recaptcha theme.
+With Recaptcha you can help prevent spam and other abuse of your Tetragy account. Configure the public and private key settings to automatically add a Recaptcha form to all your widgets.
 
 = Why is it recommended to whitelist my IP address ? =
 
-To prevent unauthorized use of your Tetragy account. If IP enforcing is disabled, all requests made with your numeric ID will be deducted from your account. By default, enforcing is enabled. Login and go to math settings to disable.
+To prevent unauthorized use of your Tetragy account. If IP enforcing is disabled, all requests made with your numeric ID will be deducted from your account. By default, enforcing is enabled.
 
 = Where can I try a demo ? =
 
