@@ -223,7 +223,7 @@ function quatriceps_script_enqueuer() {
   {
      $override_js = '';
   }
-  wp_register_script("recaptcha_script", "http://www.google.com/recaptcha/api/js/recaptcha_ajax.js", array(), '1.1.0', false);
+  wp_register_script("recaptcha_script", "https://www.google.com/recaptcha/api/js/recaptcha_ajax.js", array(), '1.1.0', false);
   wp_register_script("quatriceps_script", WP_PLUGIN_URL . '/quatriceps' . $override_js . '/quatriceps.js', array('jquery'), '1.1.0', true);
   wp_register_style("quatriceps_css", WP_PLUGIN_URL . '/quatriceps' . $override_css . '/quatriceps.css', array(), '1.1.0', 'all');
   wp_localize_script('quatriceps_script', 'quatricepsAjax', array('ajaxurl' => admin_url('admin-ajax.php'), 'quatriceps_recaptcha_pubkey' => get_option('quatriceps_recaptcha_publickey', ''), 'recaptcha_theme' => get_option('quatriceps_recaptcha_theme', 'red'), 'quatriceps_id' => get_option('quatriceps_id', '')));        
