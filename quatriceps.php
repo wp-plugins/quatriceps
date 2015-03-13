@@ -47,6 +47,10 @@ function quatriceps_plugin_settings_page()
   <div class="wrap">
     <div class="wp-quatriceps-admin">
       <h2>Quatriceps Settings</h2>
+      <?php
+        include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+        echo (!is_plugin_active('mathjax-latex/mathjax-latex.php') ? '<h3 style="color:red;">Required Wordpress MathJax-LaTeX plugin not found.</h3><h3 style="color:red;">Checkmark \'Force Load\' option once enabled.</h3>' : '');
+      ?>
       <p>Settings related to the Quatriceps plugin can be modified here and will have a global effect on all Quatriceps shortcode.</p><p>A Quatriceps account is necessary and may be obtained from <a href="https://tetragy.com/user/register">Tetragy</a>.</p>
       <div>
         <form action="options.php" method="post">

@@ -73,6 +73,7 @@ jQuery(document).ready( function($)
       success : function(data)
       {
         $(qid + ' .quatriceps-output-container').html('<div class="quatriceps-output">' + data.output + '</div><div class="quatriceps-pdf">' + data.pdf + '</div>')
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub, qid.substring(1,qid.length)]);
         $(qid + ' .quatriceps-waiting').animate({opacity:0, height:'toggle'})
         $(qid + ' .quatriceps-output').css('display', 'block')
         if(pubkey.length)
