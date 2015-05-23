@@ -10,7 +10,7 @@ Mathematics problem/solution generator
 
 == Description ==
 
-Quatriceps is a mathematics API for generating solutions to basic arithmetic problems. This plugin allows easy setup of Quatricep blocks on a Wordpress blog for student use.
+Quatriceps is a free mathematics API for generating solutions to basic arithmetic problems. This plugin allows easy setup of Quatricep blocks on a Wordpress blog for student use.
 
 When a student submits a problem, a formatted solution is retrieved from a remote server. Quatriceps operations and output will emphasize instructional solutions. Tetragy welcomes requests for new operations that may be specific to a user or organization.
 
@@ -27,9 +27,9 @@ A Tetragy ID is necessary and may be obtained from https://tetragy.com/. Account
 
 == Frequently Asked Questions ==
 
-= Can I try out the service ? =
+= How much does it cost ? =
 
-Yes, users are 2000 free sample requests and may purchase additional points, if necessary.
+All computation requests with optional PDF output are free but will be branded so that users become aware of the service.
 
 = Do I need to install anything else on my server ? =
 
