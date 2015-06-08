@@ -71,6 +71,9 @@ xlop LaTeX package copyrighted by Jean-Come Charpentier
 
 == Changelog ==
 
+= 1.1.1 =
+* Drop support for MathJax-LaTeX in favor of Simple-MathJax
+
 = 1.1.0 =
 * New operations: lcm, addfrac, divfrac, equivfrac, factors, gcf, multfrac, num2words, simplfrac, subtrac
 * New features: LaTeX support
