@@ -3,7 +3,7 @@
  * Plugin Name: Quatriceps
  * Plugin URI: http://wp.tetragy.com/quatriceps
  * Description: Mathematics problem generator
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: pmagunia
  * Author URI: https://tetragy.com
  * License: GPLv2 or Later
@@ -47,7 +47,11 @@ function quatriceps_plugin_settings_page()
   <div class="wrap">
     <div class="wp-quatriceps-admin">
       <h2>Quatriceps Settings</h2>
-      <p>Settings related to the Quatriceps plugin can be modified here and will have a global effect on all Quatriceps shortcode.</p><p>A Quatriceps account is necessary and may be obtained from <a href="https://math.tetragy.com">Tetragy</a>.</p>
+      <?php
+        include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+        echo (!is_plugin_active('mathjax-latex/mathjax-latex.php') ? '<h3 style="color:red;">Required Wordpress MathJax-LaTeX plugin not found.</h3><h3 style="color:red;">Checkmark \'Force Load\' option once enabled.</h3>' : '');
+      ?>
+      <p>Settings related to the Quatriceps plugin can be modified here and will have a global effect on all Quatriceps shortcode.</p><p>A Quatriceps account is necessary and may be obtained from <a href="https://tetragy.com/user/register">Tetragy</a>.</p>
       <div>
         <form action="options.php" method="post">
           <?php settings_fields('quatriceps_plugin_settings'); ?>
@@ -73,6 +77,7 @@ function quatriceps_plugin_admin_init()
   register_setting( 'quatriceps_plugin_settings', 'quatriceps_recaptcha_theme', 'quatriceps_recaptcha_theme_validate');
   add_settings_section('quatriceps_options', 'Quatriceps', 'quatriceps_section_text', 'quatriceps');
   add_settings_section('quatriceps_recaptcha_options', 'Recaptcha', 'quatriceps_recaptcha_text', 'quatriceps');
+  add_settings_section('quatriceps_helper_options', 'Quickstart', 'quatriceps_helper_text', 'quatriceps');
   add_settings_field('quatriceps_id', 'Tetragy Numeric ID', 'quatriceps_setting_string', 'quatriceps', 'quatriceps_options');
   add_settings_field('quatriceps_router', 'Quatriceps Router', 'quatriceps_setting_router', 'quatriceps', 'quatriceps_options');
   add_settings_field('quatriceps_recaptcha_publickey', 'Recaptcha Public Key', 'quatriceps_setting_recaptcha_publickey', 'quatriceps', 'quatriceps_recaptcha_options');
@@ -88,6 +93,11 @@ function quatriceps_section_text()
 function quatriceps_recaptcha_text()
 {
   echo '<p>Recaptcha is a Google service to help prevent spam submissions and abuse. Entering a public and private key will activite Recaptcha for all Quatriceps widgets. <strong>If you decide to use the Recaptcha service, be sure to enter the correct public and private key otherwise you may get confusing results.</strong> Also, be sure the keys you enter are for your particular domain that is registered at Google.</p>';
+}
+
+function quatriceps_helper_text()
+{
+  echo '<p>Once configured, use WordPress Shortcode syntax when editing a post to add Quatriceps widgets: <strong>[quatriceps com="addition"]</strong>.<p>Visit Tetragy\'s <a href="https://math.tetragy.com/quatriceps/doc">Quatriceps documentation</a> for a complete list of commands available. Users may also request <a href="https://tetragy.com/node/66">custom commands</a> unique to their organization.</p>';
 }
 
 function quatriceps_setting_string()
@@ -217,9 +227,9 @@ function quatriceps_script_enqueuer() {
   {
      $override_js = '';
   }
-  wp_register_script("recaptcha_script", "http://www.google.com/recaptcha/api/js/recaptcha_ajax.js", array(), '1.0.0', false);
-  wp_register_script("quatriceps_script", WP_PLUGIN_URL . '/quatriceps' . $override_js . '/quatriceps.js', array('jquery'), '1.0.0', true);
-  wp_register_style("quatriceps_css", WP_PLUGIN_URL . '/quatriceps' . $override_css . '/quatriceps.css', array(), '1.0.0', 'all');
+  wp_register_script("recaptcha_script", "https://www.google.com/recaptcha/api/js/recaptcha_ajax.js", array(), '1.1.0', false);
+  wp_register_script("quatriceps_script", WP_PLUGIN_URL . '/quatriceps' . $override_js . '/quatriceps.js', array('jquery'), '1.1.0', true);
+  wp_register_style("quatriceps_css", WP_PLUGIN_URL . '/quatriceps' . $override_css . '/quatriceps.css', array(), '1.1.0', 'all');
   wp_localize_script('quatriceps_script', 'quatricepsAjax', array('ajaxurl' => admin_url('admin-ajax.php'), 'quatriceps_recaptcha_pubkey' => get_option('quatriceps_recaptcha_publickey', ''), 'recaptcha_theme' => get_option('quatriceps_recaptcha_theme', 'red'), 'quatriceps_id' => get_option('quatriceps_id', '')));        
 
   wp_enqueue_script('recaptcha_script');

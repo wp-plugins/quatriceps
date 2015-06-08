@@ -29,7 +29,7 @@ A Tetragy ID is necessary and may be obtained from https://tetragy.com/. Account
 
 = How much does it cost ? =
 
-All computation requests with optional PDF output are free but will be branded so that users become aware of the service.
+All computation requests with optional PDF output are free but will be branded.
 
 = Do I need to install anything else on my server ? =
 
@@ -72,8 +72,8 @@ xlop LaTeX package copyrighted by Jean-Come Charpentier
 == Changelog ==
 
 = 1.1.0 =
-New operations: lcm
-Bug fixes:
+* New operations: lcm, addfrac, divfrac, equivfrac, factors, gcf, multfrac, num2words, simplfrac, subtrac
+* New features: LaTeX support
 
 = 1.0.0 =
 * Override packaged CSS and JS files
@@ -87,7 +87,7 @@ Bug fixes:
 == Upgrade Notice ==
 
 = 1.1.0 =
-New operations
+New operations, LaTeX support
 
 = 1.0.0 =
 Allows overriding CSS and JS files. No bug fixes or cosmetic changes.
