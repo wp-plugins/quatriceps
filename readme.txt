@@ -20,7 +20,7 @@ Addition is displayed with carries. Displaying carries with subtraction is optio
 
 A Tetragy ID is necessary and may be obtained from https://tetragy.com/. Accounts are necessary to allocate resources and prevent abuse of user and network services.
 
-1. Download and extract the Wordpress Quatriceps zip file to your `/wp-content/plugins/` directory.
+1. Download and enable the Quatriceps and Simple-MathJax plugins which are extracted to your `/wp-content/plugins/` directory.
 2. Whitelist your server IP addresses or disable enforcing at https://math.tetragy.com/user. Requests from unlisted IPs with IP enforcing enabled *will be rejected*.
 3. Visit the Quatriceps settings page of your Wordpress site to configure your ID. This is found under Plugins.
 4. Use Shortcode in your posts to include a Quatriceps operation. For example: `[quatriceps com="addition"]`. For additional information about Shortcode visit http://codex.wordpress.org/Shortcode.
