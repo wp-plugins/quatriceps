@@ -19,7 +19,8 @@ See the Tetragy Quatriceps API page for all currently supported operations. A de
 == Installation ==
 
 1. Download and extract the Simple-MathJax and Quatriceps zip file to your `/wp-content/plugins/` directory.
-2. Use Shortcode in your posts to include a Quatriceps operation. For example: `[quatriceps com="addition"]`.
+2. Enable the Simple-MathJax and Quatriceps plugins
+3. Use Shortcode in your posts to include a Quatriceps operation. For example: `[quatriceps com="addition"]`.
 
 == Frequently Asked Questions ==
 
@@ -62,6 +63,9 @@ xlop LaTeX package copyrighted by Jean-Come Charpentier
 = 1.1.2 =
 CSS fix for recaptcha table
 Change wording of settings page
+
+= 1.1.1 =
+* Drop support for MathJax-LaTeX in favor of Simple-MathJax
 
 = 1.1.0 =
 * New operations: lcm, addfrac, divfrac, equivfrac, factors, gcf, multfrac, num2words, simplfrac, subtrac
