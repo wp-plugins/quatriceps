@@ -61,8 +61,8 @@ xlop LaTeX package copyrighted by Jean-Come Charpentier
 == Changelog ==
 
 = 1.1.2 =
-CSS fix for recaptcha table
-Change wording of settings page
+* CSS fix for recaptcha table
+* Change wording of settings page
 
 = 1.1.1 =
 * Drop support for MathJax-LaTeX in favor of Simple-MathJax
