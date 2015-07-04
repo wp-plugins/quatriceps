@@ -6,7 +6,7 @@ Tested up to: 4.1
 License: GPLv2  or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Mathematics problem/solution generator
+Generate solutions to common math problems
 
 == Description ==
 
@@ -14,34 +14,22 @@ Quatriceps is a free mathematics API for generating solutions to basic arithmeti
 
 When a student submits a problem, a formatted solution is retrieved from a remote server. Quatriceps operations and output will emphasize instructional solutions. Tetragy welcomes requests for new operations that may be specific to a user or organization.
 
-Addition is displayed with carries. Displaying carries with subtraction is optional. Multiplication and division are displayed 'longhand'. See the Tetragy Quatriceps API page for all currently supported operations.
+See the Tetragy Quatriceps API page for all currently supported operations. A demo is available at http://wp.tetragy.com/quatriceps.
 
 == Installation ==
 
-A Tetragy ID is necessary and may be obtained from https://tetragy.com/. Accounts are necessary to allocate resources and prevent abuse of user and network services.
-
-1. Download and extract the Wordpress Quatriceps zip file to your `/wp-content/plugins/` directory.
-2. Whitelist your server IP addresses or disable enforcing at https://math.tetragy.com/user. Requests from unlisted IPs with IP enforcing enabled *will be rejected*.
-3. Visit the Quatriceps settings page of your Wordpress site to configure your ID. This is found under Plugins.
-4. Use Shortcode in your posts to include a Quatriceps operation. For example: `[quatriceps com="addition"]`. For additional information about Shortcode visit http://codex.wordpress.org/Shortcode.
+1. Download and extract the Simple-MathJax and Quatriceps zip file to your `/wp-content/plugins/` directory.
+2. Use Shortcode in your posts to include a Quatriceps operation. For example: `[quatriceps com="addition"]`.
 
 == Frequently Asked Questions ==
 
 = How much does it cost ? =
 
-All computation requests with optional PDF output are free but will be branded.
+All computation requests with optional PDF output are free.
 
 = Do I need to install anything else on my server ? =
 
 No, Wordpress and the Quatriceps plugin are the only software requirements.
-
-= How do I prevent spam submissions ? =
-
-With Recaptcha you can help prevent spam and other abuse of your Tetragy account. Configure the public and private key settings to automatically add a Recaptcha form to all your widgets.
-
-= Why is it recommended to whitelist my IP address ? =
-
-To prevent unauthorized use of your Tetragy account. If IP enforcing is disabled, all requests made with your numeric ID will be deducted from your account. By default, enforcing is enabled.
 
 = Where can I try a demo ? =
 
