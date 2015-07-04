@@ -30,6 +30,8 @@
 
 .quatriceps-recaptcha { width:460px; }
 
+.recaptchatable {table-layout:auto;}
+
 .quatriceps option { padding:0.5em; }
 
 .quatriceps select { margin:0 1em 0 0.5em; }

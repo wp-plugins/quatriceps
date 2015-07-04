@@ -2,7 +2,7 @@
 Contributors: pmagunia
 Tags: math,education,shortcode,arithmetic,learning
 Requires at least: 3.9.2
-Tested up to: 4.1
+Tested up to: 4.2.2
 License: GPLv2  or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ Quatriceps is a free mathematics API for generating solutions to basic arithmeti
 
 When a student submits a problem, a formatted solution is retrieved from a remote server. Quatriceps operations and output will emphasize instructional solutions. Tetragy welcomes requests for new operations that may be specific to a user or organization.
 
-See the Tetragy Quatriceps API page for all currently supported operations. A demo is available at http://wp.tetragy.com/quatriceps.
+See the Tetragy Quatriceps API page for all currently supported operations. A demo is available at https://wp.tetragy.com/quatriceps.
 
 == Installation ==
 
@@ -59,6 +59,10 @@ xlop LaTeX package copyrighted by Jean-Come Charpentier
 
 == Changelog ==
 
+= 1.1.2 =
+CSS fix for recaptcha table
+Change wording of settings page
+
 = 1.1.0 =
 * New operations: lcm, addfrac, divfrac, equivfrac, factors, gcf, multfrac, num2words, simplfrac, subtrac
 * New features: LaTeX support
@@ -73,6 +77,9 @@ xlop LaTeX package copyrighted by Jean-Come Charpentier
 * Initial commit
 
 == Upgrade Notice ==
+
+= 1.1.2 =
+Minor bug fixes, change wording
 
 = 1.1.0 =
 New operations, LaTeX support
