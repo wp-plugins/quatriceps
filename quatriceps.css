@@ -37,3 +37,6 @@
 .quatriceps select { margin:0 1em 0 0.5em; }
 
 .quatriceps .quatriceps-output-container img { box-shadow:none;border-radius:0px; }
+
+.quatriceps-output pre { background-color:#FFF;border:none; }
+
