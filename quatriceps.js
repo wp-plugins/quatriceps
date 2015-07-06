@@ -85,13 +85,5 @@ jQuery(document).ready( function($)
     return false;
   })
 
-  $('.quatriceps-reset').click(function()
-  {
-    qid = '#' + $(this).parent('div').parent('div').attr('id')
-    $(qid + ' .quatriceps-arg0').val('')
-    $(qid + ' .quatriceps-arg1').val('')
-    $(qid + ' .quatriceps-arg2').val('')
-    $(qid + ' .quatriceps-arg3').val('')
-  })
 }(jQuery));
 
