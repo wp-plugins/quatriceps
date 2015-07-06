@@ -60,6 +60,9 @@ xlop LaTeX package copyrighted by Jean-Come Charpentier
 
 == Changelog ==
 
+= 1.1.3 =
+* Allow multiple simultaneous requests per page
+
 = 1.1.2 =
 * CSS fix for recaptcha table
 * Change wording of settings page

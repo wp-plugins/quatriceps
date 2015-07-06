@@ -3,7 +3,7 @@ jQuery(document).ready( function($)
   var pubkey = quatricepsAjax.quatriceps_recaptcha_pubkey
   $('.quatriceps-generate').click(function()
   {
-    qid = '#' + $(this).parent('div').parent('div').attr('id')
+    var qid = '#' + $(this).parent('div').parent('div').attr('id')
     $(qid + ' .quatriceps-output').hide()
     n1 = Math.floor(Math.random() * 1000) + 1
     n2 = Math.floor(Math.random() * 1000) + 1
@@ -20,7 +20,7 @@ jQuery(document).ready( function($)
 
   $('.quatriceps-reveal').click(function()
   {
-    qid = '#' + $(this).parent('div').parent('div').attr('id')
+    var qid = '#' + $(this).parent('div').parent('div').attr('id')
     if($(qid + ' .quatriceps-arg0').val() == '')
     {
      alert('Please enter all required input.')
