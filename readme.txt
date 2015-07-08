@@ -63,6 +63,7 @@ xlop LaTeX package copyrighted by Jean-Come Charpentier
 = 1.1.3 =
 * Allow multiple simultaneous requests per page
 * Remove obsolete code
+* New operations: frac2dec and dec2frac
 
 = 1.1.2 =
 * CSS fix for recaptcha table
